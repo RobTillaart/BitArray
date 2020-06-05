@@ -2,12 +2,11 @@
 //
 //    FILE: bitArray.h
 //  AUTHOR: Rob dot Tillaart at gmail dot com
-// VERSION: 0.2.0
+// VERSION: 0.2.1
 // PURPOSE: BitArray library for Arduino
-// HISTORY: See BitArray.cpp
-//
-// Released to the public domain
-//
+//     URL: https://github.com/RobTillaart/BitArray
+
+
 // BitArray allows you to make a compact array of objects with a size
 // expressed in bits. typically 1..10.
 // The interface uses uint32_t as that will be enough for most purposes.
@@ -18,12 +17,11 @@
 //
 // Originally created to store lot of numbers between 1..6 dice rolls
 // the storage is also usable to store e.g. raw 10 bit analogReads
-// see demo sketches.
 //
 
 #include "Arduino.h"
 
-#define BITARRAY_LIB_VERSION "0.2.0"
+#define BITARRAY_LIB_VERSION "0.2.1"
 
 #define BA_SEGMENT_SIZE 200
 
