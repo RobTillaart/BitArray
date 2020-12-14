@@ -116,7 +116,9 @@ unittest(test_clear)
     sum += ba.get(i);
   }
   assertEqual(1000, sum);
+
   ba.clear();
+  sum = 0;
   for (int i = 0; i < 1000; i++)
   {
     sum += ba.get(i);

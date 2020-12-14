@@ -144,7 +144,7 @@ void BitArray::clear()
     }
 }
 
-// 16 bit address usage is faster
+// 16 bit address usage is faster 
 // void BitArray::clear()
 // {
     // uint16_t b = _bytes;
@@ -156,7 +156,7 @@ void BitArray::clear()
         // {
             // for (uint8_t t = 0; t < BA_SEGMENT_SIZE/2; t++) 
             // {
-              // *p++ = 0;
+              // *p++ = 0;    // might be bug @ edge..
             // }
         // }
         // if (b == 0) break;
