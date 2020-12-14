@@ -76,7 +76,7 @@ unittest(test_set_get_toggle)
   sum = 0;
   for (int i = 0; i < 1000; i++)
   {
-    ba.set(i, 0);
+    ba.set(i, 1);
   }
   for (int i = 0; i < 1000; i++)
   {
