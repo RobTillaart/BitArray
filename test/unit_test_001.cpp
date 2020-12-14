@@ -46,9 +46,9 @@ unittest(test_constructor)
   ba.begin(1, 1000);
   assertEqual(BA_OK, ba.getError());
 
-  assertEqual(1, ba.capacity());
-  assertEqual(1, ba.memory());
   assertEqual(1, ba.bits());
+  assertEqual(1000, ba.capacity());
+  assertEqual(125, ba.memory());
   fprintf(stderr, "SEGMENTS:\t %d\n", ba.segments());
 }
 
