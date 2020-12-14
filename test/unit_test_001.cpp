@@ -59,7 +59,7 @@ unittest(test_set_get_toggle)
 
   ba.begin(1, 1000);
 
-  fprintf(stderr, "1000x set(i, 0) -> sum += get(i)");
+  fprintf(stderr, "1000x set(i, 0) -> sum += get(i)\n");
   int sum = 0;
   for (int i = 0; i < 1000; i++)
   {
@@ -71,7 +71,7 @@ unittest(test_set_get_toggle)
   }
   assertEqual(0, sum);
 
-  fprintf(stderr, "1000x set(i, 1) -> sum += get(i)");
+  fprintf(stderr, "1000x set(i, 1) -> sum += get(i)\n");
   sum = 0;
   for (int i = 0; i < 1000; i++)
   {
@@ -83,7 +83,7 @@ unittest(test_set_get_toggle)
   }
   assertEqual(1000, sum);
   
-  fprintf(stderr, "1000x toggle(i)");
+  fprintf(stderr, "1000x toggle(i)\n");
   sum = 0;
   for (int i = 0; i < 1000; i++)
   {
@@ -103,7 +103,7 @@ unittest(test_clear)
 
   ba.begin(1, 1000);
 
-  fprintf(stderr, "1000x set(i, 1) -> clear() -> sum += get(i)");
+  fprintf(stderr, "1000x set(i, 1) -> clear() -> sum += get(i)\n");
   int sum = 0;
   for (int i = 0; i < 1000; i++)
   {
