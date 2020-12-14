@@ -38,7 +38,7 @@ unittest(test_constructor)
   BitArray ba;
   assertEqual(BA_NO_MEMORY_ERR, ba.getError());
   
-  fprintf(stderr, "VERSION:\t %s\n", BITARRAY_LIB_VERSION);
+  fprintf(stderr, "\tVERSION:\t %s\n", BITARRAY_LIB_VERSION);
 
   ba.begin(0, 1000);
   assertEqual(BA_ELEMENT_SIZE_ERR, ba.getError());
@@ -50,7 +50,7 @@ unittest(test_constructor)
   assertEqual(1, ba.bits());
   assertEqual(1000, ba.capacity());
   assertEqual(125, ba.memory());
-  fprintf(stderr, "SEGMENTS:\t %d\n", ba.segments());
+  fprintf(stderr, "\tSEGMENTS:\t %d\n", ba.segments());
 }
 
 unittest(test_set_get_toggle)
@@ -60,7 +60,7 @@ unittest(test_set_get_toggle)
   ba.begin(1, 1000);
   assertEqual(BA_OK, ba.getError());
 
-  fprintf(stderr, "1000x set(i, 0) -> sum += get(i)\n");
+  fprintf(stderr, "\t1000x set(i, 0) -> sum += get(i)\n");
   int sum = 0;
   for (int i = 0; i < 1000; i++)
   {
@@ -72,7 +72,7 @@ unittest(test_set_get_toggle)
   }
   assertEqual(0, sum);
 
-  fprintf(stderr, "1000x set(i, 1) -> sum += get(i)\n");
+  fprintf(stderr, "\t1000x set(i, 1) -> sum += get(i)\n");
   sum = 0;
   for (int i = 0; i < 1000; i++)
   {
@@ -84,7 +84,7 @@ unittest(test_set_get_toggle)
   }
   assertEqual(1000, sum);
   
-  fprintf(stderr, "1000x toggle(i)\n");
+  fprintf(stderr, "\t1000x toggle(i)\n");
   sum = 0;
   for (int i = 0; i < 1000; i++)
   {
@@ -100,11 +100,12 @@ unittest(test_set_get_toggle)
 unittest(test_clear)
 {
   BitArray ba;
-  assertEqual(BA_OK, ba.getError());
 
   ba.begin(1, 1000);
+  assertEqual(BA_OK, ba.getError());
 
-  fprintf(stderr, "1000x set(i, 1) -> clear() -> sum += get(i)\n");
+
+  fprintf(stderr, "\t1000x set(i, 1) -> clear() -> sum += get(i)\n");
   int sum = 0;
   for (int i = 0; i < 1000; i++)
   {
