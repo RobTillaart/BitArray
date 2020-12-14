@@ -1,15 +1,18 @@
 //
 //    FILE: BitArray.cpp
 //  AUTHOR: Rob Tillaart
-// VERSION: 0.2.1
+// VERSION: 0.2.2
 // PURPOSE: BitArray library for Arduino
 //     URL: https://github.com/RobTillaart/BitArray
 //          http://forum.arduino.cc/index.php?topic=361167
 //
 // 16 bit clear is faster --> verify correctness
 
-// 0.2.1    2020-06-05 fix library.json
-// 0.2.0    2020-03-28 #pragma once, readme, fix fibnacci demo
+
+// 0.2.2    2020-12-14  add arduino-CI + unit test
+// 0.2.1    2020-06-05  fix library.json
+// 0.2.0    2020-03-28  #pragma once, readme, fix fibnacci demo
+//
 // 0.1.9  - fix constructor bug
 // 0.1.8  - added toggle
 // 0.1.07 - private calls inline -> performance & footprint
