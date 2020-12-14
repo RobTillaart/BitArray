@@ -125,43 +125,43 @@ uint32_t BitArray::toggle(const uint16_t idx)
     return v;
 }
 
-// void BitArray::clear()
-// {
-    // uint16_t b = _bytes;
-    // for (uint8_t s = 0; s < _segments; s++)
-    // {
-        // uint8_t *p = _ar[s];
-        // if (p)
-        // {
-            // uint8_t t = min(b, BA_SEGMENT_SIZE);
-            // b -= t;
-            // while(t--)
-            // {
-                // *p++ = 0;
-            // }
-        // }
-        // if (b == 0) break;
-    // }
-// }
-
-// 16 bit address usage is faster
 void BitArray::clear()
 {
     uint16_t b = _bytes;
     for (uint8_t s = 0; s < _segments; s++)
     {
-        uint8_t *q = _ar[s];
-        uint16_t *p = (uint16_t*)q;
+        uint8_t *p = _ar[s];
         if (p)
         {
-            for (uint8_t t = 0; t < BA_SEGMENT_SIZE/2; t++) 
+            uint8_t t = min(b, BA_SEGMENT_SIZE);
+            b -= t;
+            while(t--)
             {
-              *p++ = 0;
+                *p++ = 0;
             }
         }
         if (b == 0) break;
     }
 }
+
+// 16 bit address usage is faster
+// void BitArray::clear()
+// {
+    // uint16_t b = _bytes;
+    // for (uint8_t s = 0; s < _segments; s++)
+    // {
+        // uint8_t *q = _ar[s];
+        // uint16_t *p = (uint16_t*)q;
+        // if (p)
+        // {
+            // for (uint8_t t = 0; t < BA_SEGMENT_SIZE/2; t++) 
+            // {
+              // *p++ = 0;
+            // }
+        // }
+        // if (b == 0) break;
+    // }
+// }
 
 // PRIVATE
 inline uint8_t BitArray::_bitget(uint16_t pos)
