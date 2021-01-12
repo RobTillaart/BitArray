@@ -1,8 +1,8 @@
 //
 //    FILE: unit_test_001.cpp
 //  AUTHOR: Rob Tillaart
-//    DATE: 2020-12-03
-// PURPOSE: unit tests for the XXXXXX
+//    DATE: 2020-12-13
+// PURPOSE: unit tests for the BitArray
 //          https://github.com/RobTillaart/
 //          https://github.com/Arduino-CI/arduino_ci/blob/master/REFERENCE.md
 //
