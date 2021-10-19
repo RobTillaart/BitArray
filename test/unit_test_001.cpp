@@ -40,7 +40,7 @@ unittest(test_constructor)
 {
   BitArray ba;
 
-  fprintf(stderr, "BITARRAY_LIB_VERSION: %s\n", (char *) BITARRAY_LIB_VERSION));
+  fprintf(stderr, "BITARRAY_LIB_VERSION: %s\n", (char *) BITARRAY_LIB_VERSION);
 
   assertEqual(BA_NO_MEMORY_ERR, ba.getError());
   
@@ -64,17 +64,17 @@ unittest(test_set_get_toggle)
 {
   BitArray ba;
 
-  fprintf(stderr, "BITARRAY_LIB_VERSION: %s\n", (char *) BITARRAY_LIB_VERSION));
+  fprintf(stderr, "BITARRAY_LIB_VERSION: %s\n", (char *) BITARRAY_LIB_VERSION);
   ba.begin(1, 1000);
   assertEqual(BA_OK, ba.getError());
 
   fprintf(stderr, "\t1000x set(i, 0) -> sum += get(i)\n");
   int sum = 0;
-  for (int i = 0; i < ba.size(); i++)
+  for (int i = 0; i < ba.capacity(); i++)
   {
     ba.set(i, 0);
   }
-  for (int i = 0; i < ba.size(); i++)
+  for (int i = 0; i < ba.capacity(); i++)
   {
     sum += ba.get(i);
   }
@@ -82,11 +82,11 @@ unittest(test_set_get_toggle)
 
   fprintf(stderr, "\t1000x set(i, 1) -> sum += get(i)\n");
   sum = 0;
-  for (int i = 0; i < ba.size(); i++)
+  for (int i = 0; i < ba.capacity(); i++)
   {
     ba.set(i, 1);
   }
-  for (int i = 0; i < ba.size(); i++)
+  for (int i = 0; i < ba.capacity(); i++)
   {
     sum += ba.get(i);
   }
@@ -94,11 +94,11 @@ unittest(test_set_get_toggle)
   
   fprintf(stderr, "\t1000x toggle(i)\n");
   sum = 0;
-  for (int i = 0; i < ba.size(); i++)
+  for (int i = 0; i < ba.capacity(); i++)
   {
     ba.toggle(i);
   }
-  for (int i = 0; i < ba.size(); i++)
+  for (int i = 0; i < ba.capacity(); i++)
   {
     sum += ba.get(i);
   }
@@ -110,18 +110,18 @@ unittest(test_clear)
 {
   BitArray ba;
 
-  fprintf(stderr, "BITARRAY_LIB_VERSION: %s\n", (char *) BITARRAY_LIB_VERSION));
+  fprintf(stderr, "BITARRAY_LIB_VERSION: %s\n", (char *) BITARRAY_LIB_VERSION);
   ba.begin(1, 1000);
   assertEqual(BA_OK, ba.getError());
 
 
   fprintf(stderr, "\t1000x set(i, 1) -> clear() -> sum += get(i)\n");
   int sum = 0;
-  for (int i = 0; i < ba.size(); i++)
+  for (int i = 0; i < ba.capacity(); i++)
   {
     ba.set(i, 1);
   }
-  for (int i = 0; i < ba.size(); i++)
+  for (int i = 0; i < ba.capacity(); i++)
   {
     sum += ba.get(i);
   }
@@ -129,7 +129,7 @@ unittest(test_clear)
 
   ba.clear();
   sum = 0;
-  for (int i = 0; i < ba.size(); i++)
+  for (int i = 0; i < ba.capacity(); i++)
   {
     sum += ba.get(i);
   }
@@ -149,7 +149,7 @@ unittest(test_setAll)
   fprintf(stderr, "\tsetAll(17) -> sum += get(i)\n");
   ba.setAll(17);
   uint32_t sum = 0;
-  for (int i = 0; i < ba.size(); i++)
+  for (int i = 0; i < ba.capacity(); i++)
   {
     sum += ba.get(i);
   }
@@ -157,7 +157,7 @@ unittest(test_setAll)
 
   ba.clear();
   sum = 0;
-  for (int i = 0; i < ba.size(); i++)
+  for (int i = 0; i < ba.capacity(); i++)
   {
     sum += ba.get(i);
   }
