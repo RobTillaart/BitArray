@@ -68,7 +68,7 @@ uint8_t BitArray::begin(const uint8_t bits, const uint16_t size)
     uint16_t b = _bytes;
     while (b > 0)
     {
-        _ar[_segments] = (uint8_t*) malloc(min(b, BA_SEGMENT_SIZE));
+        _ar[_segments] = (uint8_t*) malloc(min(b, (uint16_t) BA_SEGMENT_SIZE));
         if (_ar[_segments] == NULL)
         {
             _error = BA_NO_MEMORY_ERR;
