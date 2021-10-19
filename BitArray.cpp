@@ -74,7 +74,7 @@ uint8_t BitArray::begin(const uint8_t bits, const uint16_t size)
             _error = BA_NO_MEMORY_ERR;
             return _error;
         }
-        b = b - min(b, BA_SEGMENT_SIZE);
+        b = b - min(b, (uint16_t) BA_SEGMENT_SIZE);
         _segments++;
     }
     _error = BA_OK;
