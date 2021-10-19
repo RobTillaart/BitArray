@@ -44,7 +44,7 @@ unittest(test_constructor)
 
   assertEqual(BA_NO_MEMORY_ERR, ba.getError());
   
-  fprintf(stderr, "\tVERSION:\t %s\n", BITARRAY_LIB_VERSION);
+  fprintf(stderr, "\tVERSION:\t %s\n", (char *) BITARRAY_LIB_VERSION);
 
   ba.begin(0, 1000);
   assertEqual(BA_ELEMENT_SIZE_ERR, ba.getError());
