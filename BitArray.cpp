@@ -137,7 +137,7 @@ void BitArray::clear()
         uint8_t *p = _ar[s];
         if (p)
         {
-            uint8_t t = min(b, BA_SEGMENT_SIZE);
+            uint8_t t = min(b, (uint16_t) BA_SEGMENT_SIZE);
             b -= t;
             while(t--)
             {
@@ -152,21 +152,10 @@ void BitArray::clear()
 
 void BitArray::setAll(uint32_t value)
 {
-    uint16_t b = _bytes;
-    for (uint8_t s = 0; s < _segments; s++)
-    {
-        uint8_t *p = _ar[s];
-        if (p)
-        {
-            uint8_t t = min(b, BA_SEGMENT_SIZE);
-            b -= t;
-            while(t--)
-            {
-                *p++ = value;
-            }
-        }
-        if (b == 0) break;
-    }
+  for (uint16_t i = capacity() - 1; i; i--)
+  {
+    set(i, value);
+  }
 }
 
 
