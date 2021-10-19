@@ -1,6 +1,6 @@
-# Syntax Coloring Map For BitArray
+# Syntax Colouring Map For BitArray
 
-# Datatypes (KEYWORD1)
+# Data types (KEYWORD1)
 BitArray	KEYWORD1
 
 
