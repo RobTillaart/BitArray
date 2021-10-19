@@ -141,7 +141,7 @@ unittest(test_setAll)
 {
   BitArray ba;
 
-  fprintf(stderr, "BITARRAY_LIB_VERSION: %s\n", (char *) BITARRAY_LIB_VERSION));
+  fprintf(stderr, "BITARRAY_LIB_VERSION: %s\n", (char *) BITARRAY_LIB_VERSION);
   ba.begin(5, 200);
   assertEqual(BA_OK, ba.getError());
 
