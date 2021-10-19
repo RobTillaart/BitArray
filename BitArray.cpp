@@ -152,7 +152,7 @@ void BitArray::clear()
 
 void BitArray::setAll(uint32_t value)
 {
-  for (uint16_t i = capacity() - 1; i; i--)
+  for (uint16_t i = 0; i < capacity(); i++)
   {
     set(i, value);
   }
