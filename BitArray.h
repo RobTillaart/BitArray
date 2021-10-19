@@ -80,7 +80,7 @@ public:
   void     clear();
   uint32_t get(const uint16_t idx);
   uint32_t set(const uint16_t idx, uint32_t value);
-  uint32_t setAll(uint32_t value);
+  void     setAll(uint32_t value);
   uint32_t toggle(const uint16_t idx);
 
 private:
