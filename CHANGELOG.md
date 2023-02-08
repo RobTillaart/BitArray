@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 - minor edit unit test
 - update GitHub actions
 - update license 2023
+- add toggle example
 - minor edits
 
 

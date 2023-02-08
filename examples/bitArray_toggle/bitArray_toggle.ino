@@ -1,7 +1,7 @@
 //
-//    FILE: bitArrayDemo4.ino
+//    FILE: bitArray_toggle.ino
 //  AUTHOR: Rob Tillaart
-// PURPOSE: demo performance reading boolean array
+// PURPOSE: demo performance toggle bitarray
 //    DATE: 2017-07-15
 //     URL: https://github.com/RobTillaart/BitArray
 //     URL: https://forum.arduino.cc/index.php?topic=361167.0

@@ -27,9 +27,9 @@ this library can deliver.
 
 The BitArray library is one from a set of three:
 
-- **BitArray** for elements of user defined size in bits (values 0 .. 2^n-1).
-- **BoolArray** for elements of 1 bit (values 0 .. 1).
-- **nybbleArray** for elements of 4 bits (values 0 .. 15).
+- https://github.com/RobTillaart/BitArray for elements of user defined size in bits (values 0 .. 2^n-1).
+- https://github.com/RobTillaart/BoolArray for elements of 1 bit (values 0 .. 1).
+- https://github.com/RobTillaart/nibbleArray for elements of 4 bits or smaller (values 0 .. 15).
 
 
 #### Notes
