@@ -25,17 +25,17 @@
 //  adjust BITARRAY_MAXSIZE to your needs and board used.
 //  BITARRAY_MAXSIZE is in bytes...
 #ifndef BITARRAY_MAXSIZE
-#define BITARRAY_MAXSIZE         (1250UL)
+#define BITARRAY_MAXSIZE         1250
 #endif
 
 
 //  ERROR CODES
-constexpr int BA_ERR              = 0xFFFF;
-constexpr int BA_OK               = 0x00;
-constexpr int BA_NO_MEMORY_ERR    = 0x01;
-constexpr int BA_IDX_RANGE_ERR    = 0x02;
-constexpr int BA_ELEMENT_SIZE_ERR = 0x03;
-constexpr int BA_SIZE_ERR         = 0x04;
+constexpr int BA_ERR              = -1;
+constexpr int BA_OK               = 0;
+constexpr int BA_NO_MEMORY_ERR    = 1;
+constexpr int BA_IDX_RANGE_ERR    = 2;
+constexpr int BA_ELEMENT_SIZE_ERR = 3;
+constexpr int BA_SIZE_ERR         = 4;
 
 
 /////////////////////////////////////////////////////////

@@ -49,7 +49,7 @@ int BitArray::begin(const uint8_t elementSize, const uint16_t elementCount)
   _bits = elementSize;
   _size = elementCount;
   _bytes = (1UL * _bits * _size + 7) / 8;
-  if (_array != nullptr) 
+  if (_array != nullptr)
   {
     free(_array);
   }
@@ -70,8 +70,6 @@ int BitArray::begin(const uint8_t elementSize, const uint16_t elementCount)
 
 uint16_t BitArray::get(const uint16_t index)
 {
-  //  if (_error != BA_OK) return BA_ERR;
-  //  if (index >= _size) return BA_IDX_RANGE;
   uint16_t v = 0;
   uint32_t pos = index * _bits;
 
@@ -86,8 +84,6 @@ uint16_t BitArray::get(const uint16_t index)
 
 uint16_t BitArray::set(const uint16_t index, uint16_t value)
 {
-  //  if (_error != BA_OK) return BA_ERR;
-  //  if (index >= _size) return BA_IDX_RANGE;
   uint32_t pos = index * _bits;
   uint16_t mask = 1UL;
   for (uint8_t i = 0; i < _bits; i++)
@@ -102,8 +98,6 @@ uint16_t BitArray::set(const uint16_t index, uint16_t value)
 
 uint16_t BitArray::toggle(const uint16_t index)
 {
-  //  if (_error != BA_OK) return BA_ERR;
-  //  if (index >= _size) return BA_IDX_RANGE;
   uint16_t v = 0;
   uint32_t pos = index * _bits;
   for (uint8_t i = _bits; i-- > 0;)
@@ -124,7 +118,7 @@ int BitArray::clear()
   }
   uint8_t *p = _array;
   uint16_t t = _bytes;
-  while (t--) 
+  while (t--)
   {
     *p++ = 0;
   }
@@ -218,7 +212,7 @@ int BitArray32::begin(const uint8_t elementSize, const uint32_t elementCount)
   _bits = elementSize;
   _size = elementCount;
   _bytes = (1UL * _bits * _size + 7) / 8;
-  if (_array != nullptr) 
+  if (_array != nullptr)
   {
     free(_array);
   }
@@ -239,8 +233,6 @@ int BitArray32::begin(const uint8_t elementSize, const uint32_t elementCount)
 
 uint32_t BitArray32::get(const uint32_t index)
 {
-  //  if (_error != BA_OK) return BA_ERR;
-  //  if (index >= _size) return BA_IDX_RANGE;
   uint32_t v = 0;
   uint32_t pos = index * _bits;
 
@@ -255,8 +247,6 @@ uint32_t BitArray32::get(const uint32_t index)
 
 uint32_t BitArray32::set(const uint32_t index, uint32_t value)
 {
-  //  if (_error != BA_OK) return BA_ERR;
-  //  if (index >= _size) return BA_IDX_RANGE;
   uint32_t pos = index * _bits;
   uint32_t mask = 1UL;
   for (uint8_t i = 0; i < _bits; i++)
@@ -271,8 +261,6 @@ uint32_t BitArray32::set(const uint32_t index, uint32_t value)
 
 uint32_t BitArray32::toggle(const uint32_t index)
 {
-  //  if (_error != BA_OK) return BA_ERR;
-  //  if (index >= _size) return BA_IDX_RANGE;
   uint32_t v = 0;
   uint16_t pos = index * _bits;
   for (uint8_t i = _bits; i-- > 0;)
@@ -293,14 +281,13 @@ int BitArray32::clear()
   }
   uint8_t *p = _array;
   uint32_t t = _bytes;
-  while (t--) 
+  while (t--)
   {
     *p++ = 0;
   }
   _error = BA_OK;
   return _error;
 }
-
 
 
 int BitArray32::setAll(uint32_t value)
