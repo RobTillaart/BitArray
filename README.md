@@ -26,6 +26,14 @@ into multiple bytes, and byte borders. Depending where an element is located wri
 can take more time. You need to check if your application needs more performance than
 this library can deliver. 
 
+
+### Breaking Change 0.3.0
+
+The internal storage structure has been changed (simplified).
+The BitArray class is limited to 64 KB maximum allocation (elementSize x count).
+A new BitArray32 class is created if one needs to go beyond 64 KB.
+
+
 ### Related
 
 The BitArray library is one from a set of three:
@@ -36,6 +44,9 @@ The BitArray library is one from a set of three:
 
 
 ### Notes
+
+
+REDO THIS ...
 
 The BitArray class allocates dynamic memory, so called BA_SEGMENTS, 
 each of 200 bytes.
@@ -57,7 +68,7 @@ one might use a different implementation as continuous memory is possible.
 
 - **BitArray()** Constructor.
 - **~BitArray()** Destructor, frees dynamic memory.
-- **uint8_t begin(const uint8_t bits, const uint16_t size)**
+- **uint8_t begin(const uint8_t elementSize, const uint16_t elementCount)**
 Frees memory used and allocates the memory requested. 
 The maximum number of elements is 65535 if memory allows, 
 the maximum element size is 32.
@@ -71,7 +82,7 @@ Better names could be **bits ==> elementSize** and **size ==> elementCount**.
 - **uint16_t capacity()** idem.
 - **uint16_t memory()** idem.
 - **uint16_t bits()** idem.
-- **uint16_t segments()** idem.
+
 
 ### Error
 
