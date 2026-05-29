@@ -9,6 +9,9 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## [0.3.0] - 2026-05-28
 - major refactor
 - made BitArray() and BitArray32()
+- renamed **bits()** to **elementSize()**
+- removed **segments()** as not used
+- adjusted parameter and return types
 - redo internal logic more in line with BoolArray and NibbleArray libs.
 - update readme.md
 - update GitHub actions
